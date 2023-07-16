@@ -1,0 +1,15 @@
+apiVersion: ec2.services.k8s.aws/v1alpha1
+kind: SecurityGroup
+metadata:
+  name: db-sg
+spec:
+  description: "database security group"
+  name: db-sg
+  vpcID: {{ .Values.vpc.vpcID }}
+  ingressRules:
+    - ipProtocol: tcp
+      fromPort: 5432
+      toPort: 5432
+      ipRanges:
+        - cidrIP: {{ .Values.vpc.cidr }}
+          description: "ingress"

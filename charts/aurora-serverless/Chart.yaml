@@ -1,0 +1,6 @@
+apiVersion: v2
+name: aurora-serverless
+description: A Helm chart for to setup aurora serverless database and export the details into a secret to be used by other apps
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

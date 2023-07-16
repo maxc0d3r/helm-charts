@@ -1,0 +1,19 @@
+apiVersion: services.k8s.aws/v1alpha1
+kind: FieldExport
+metadata:
+  name: {{ .Values.clusterName }}-host
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    "helm.sh/hook": "post-install"
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  to:
+    name: {{ .Values.clusterName }}-db-secret
+    kind: secret
+    key: postgresHost
+  from:
+    path: ".status.endpoint.address"
+    resource:
+      group: rds.services.k8s.aws
+      kind: DBInstance
+      name: {{ .Values.clusterName }}-instance

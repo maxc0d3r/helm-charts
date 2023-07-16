@@ -1,0 +1,33 @@
+apiVersion: rds.services.k8s.aws/v1alpha1
+kind: DBCluster
+metadata:
+  name: {{ .Values.clusterName }}
+spec:
+  backupRetentionPeriod: 7
+  serverlessV2ScalingConfiguration:
+    maxCapacity: {{ .Values.aurora.maxACU }}
+    minCapacity: {{ .Values.aurora.minACU }}
+  dbClusterIdentifier: {{ .Values.clusterName | quote }}
+  dbSubnetGroupName: "aurora-subnet-group"
+  engine: {{ .Values.aurora.engine | quote }}
+  engineVersion: {{ .Values.aurora.engineVersion | quote }}
+  masterUsername: {{ .Values.aurora.masterUsername | quote }}
+  masterUserPassword: 
+    name: {{ .Values.clusterName }}-db-secret
+    key: masterUserPassword
+  vpcSecurityGroupRefs:
+    - from:
+        name: "db-sg"
+---
+apiVersion: rds.services.k8s.aws/v1alpha1
+kind: DBInstance
+metadata:
+  name: {{ .Values.clusterName }}-instance
+spec:
+  dbInstanceClass: {{ .Values.aurora.dbInstanceClass | quote }}
+  dbInstanceIdentifier: {{ .Values.clusterName | quote }}
+  dbClusterIdentifier: {{ .Values.clusterName | quote }}
+  dbSubnetGroupName: "aurora-subnet-group"
+  engine: {{ .Values.aurora.engine | quote }}
+  engineVersion: {{ .Values.aurora.engineVersion  | quote}}
+  publiclyAccessible: false
