@@ -1,0 +1,15 @@
+apiVersion: v1
+entries:
+  aurora-serverless:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-07-16T19:25:58.410907611Z"
+    description: A Helm chart for to setup aurora serverless database and export the
+      details into a secret to be used by other apps
+    digest: 4ff8206a6514ff762ad2b4d4edabcf9daf98c4dba99610c97c2f27c49d45acad
+    name: aurora-serverless
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/aurora-serverless-0.1.0/aurora-serverless-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-07-16T19:25:58.410911811Z"
