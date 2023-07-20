@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: solr-data-claim
+  labels:
+    {{- include "solr.labels" . | nindent 4 }}
+spec:
+  {{ if .Values.rwoStorageClass }}
+  storageClassName: {{ .Values.rwoStorageClass }}
+  {{ end }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.pvc.size }}
