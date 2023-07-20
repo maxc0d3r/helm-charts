@@ -12,4 +12,15 @@ entries:
     urls:
     - https://github.com/maxc0d3r/helm-charts/releases/download/aurora-serverless-0.1.0/aurora-serverless-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-16T19:25:58.410911811Z"
+  solr:
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2023-07-20T19:14:41.628798793Z"
+    description: A Helm chart for setting up solr
+    digest: 13002de60650d10f54f1992c6353afc99384f40a80ba49de8ea5fdb0a1ef6c7a
+    name: solr
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/solr-0.1.0/solr-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-07-20T19:14:41.628846293Z"
