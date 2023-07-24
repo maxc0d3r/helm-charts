@@ -1,0 +1,6 @@
+apiVersion: v2
+name: crayfish
+description: A Helm chart for setting up crayfish
+type: application
+version: 0.1.0
+appVersion: "1.0.0-3.x"

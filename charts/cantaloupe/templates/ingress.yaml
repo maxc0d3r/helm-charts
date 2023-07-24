@@ -1,0 +1,33 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: cantaloupe
+spec:
+  entryPoints:
+    - {{ template "http.scheme" . }}
+  routes:
+  - kind: Rule
+    match: Host(`{{ .Values.ingress.host }}`) && PathPrefix(`/iiif`)
+    middlewares:
+        - name: addcantaloupe
+        - name: stripforwardedpath
+    services:
+    - kind: Service
+      name: cantaloupe
+      passHostHeader: true
+      port: {{ .Values.service.port }}
+  {{ if .Values.ingress.tls.enabled -}}
+  tls:
+    certResolver: {{ .Values.ingress.tls.resolver }}
+    domains:
+    - main: {{ .Values.ingress.host }}
+  {{ end -}}
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: addcantaloupe
+spec:
+  addPrefix:
+    prefix: /cantaloupe
