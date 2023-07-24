@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: activemq-kahadb-claim
   labels:
-    {{- include "drupal.labels" . | nindent 4 }}
+    {{- include "activemq.labels" . | nindent 4 }}
 spec:
   {{ if .Values.rwoStorageClass }}
   storageClassName: {{ .Values.rwoStorageClass }}
