@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: activemq-kahadb-claim
+  labels:
+    {{- include "drupal.labels" . | nindent 4 }}
+spec:
+  {{ if .Values.rwoStorageClass }}
+  storageClassName: {{ .Values.rwoStorageClass }}
+  {{ end }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.activemq.pvc.size }}
