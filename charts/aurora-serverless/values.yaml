@@ -1,0 +1,13 @@
+#Name of aurora cluster"
+clusterName: ""
+#VPC Details. 
+#TBD: Would prefer to get this automatically identified using AdoptedResource
+vpc:
+  vpcID: "" #
+aurora:
+  minACU: 1
+  maxACU: 1
+  engine: "" #Database engine
+  masterUsername: "" #Master username
+  masterUserPassword: "" #This can be removed to let the password be randomly generated
+  dbInstanceClass: "db.serverless" 
