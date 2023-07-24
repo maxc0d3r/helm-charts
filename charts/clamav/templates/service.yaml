@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-clamav
+  labels:
+    {{- include "clamav.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.port }}
+      protocol: TCP
+      name: {{ include "clamav.name" .}}
+  selector:
+    {{- include "clamav.selectorLabels" . | nindent 4 }}
