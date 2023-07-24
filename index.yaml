@@ -34,6 +34,17 @@ entries:
     urls:
     - https://github.com/maxc0d3r/helm-charts/releases/download/aurora-serverless-0.1.0/aurora-serverless-0.1.0.tgz
     version: 0.1.0
+  cantaloupe:
+  - apiVersion: v2
+    appVersion: 4.1.9-tomcat9.0.69
+    created: "2023-07-24T13:11:16.309490655Z"
+    description: A Helm chart for setting up cantaloupe
+    digest: d67a6a878704e0e693400f86343f4a5925c69b78eef385c019f9926de9b9c577
+    name: cantaloupe
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/cantaloupe-0.1.0/cantaloupe-0.1.0.tgz
+    version: 0.1.0
   clamav:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -44,6 +55,17 @@ entries:
     type: application
     urls:
     - https://github.com/maxc0d3r/helm-charts/releases/download/clamav-0.1.0/clamav-0.1.0.tgz
+    version: 0.1.0
+  crayfish:
+  - apiVersion: v2
+    appVersion: 1.0.0-3.x
+    created: "2023-07-24T13:11:16.532244489Z"
+    description: A Helm chart for setting up crayfish
+    digest: 35cde75dfa18ca109350f89e692013517c6bc7247319904078c3a7cd90df7e97
+    name: crayfish
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/crayfish-0.1.0/crayfish-0.1.0.tgz
     version: 0.1.0
   solr:
   - apiVersion: v2
@@ -56,4 +78,4 @@ entries:
     urls:
     - https://github.com/maxc0d3r/helm-charts/releases/download/solr-0.1.0/solr-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-24T13:09:35.396866293Z"
+generated: "2023-07-24T13:11:16.532254389Z"
