@@ -3,20 +3,20 @@ kind: ConfigMap
 metadata:
   name: alpaca-env
 data:
-  {{- if .Values.multiTenant -}}
+  {{- if .Values.multiTenant }}
   HOMARUS_URL: "http://svc-crayfish.shared/homarus/convert"
   HOUDINI_URL: "http://svc-crayfish.shared/houdini/convert"
   HYPERCUBE_URL: "http://svc-crayfish.shared/hypercube"
-  {{- if not .Values.useManagedServices -}}
+  {{- if not .Values.useManagedServices }}
   ACTIVEMQ_HOST: "svc-activemq.shared"
   ACTIVEMQ_JMS_PORT: "61613"
   POSTGRES_HOST: "svc-postgres.shared"
-  {{- end -}}
-  {{- else -}}
+  {{- end }}
+  {{- else }}
   ACTIVEMQ_HOST: "svc-activemq"
   ACTIVEMQ_JMS_PORT: "61613"
   POSTGRES_HOST: "svc-postgres"
   HOMARUS_URL: "http://svc-crayfish/homarus/convert"
   HOUDINI_URL: "http://svc-crayfish.shared/houdini/convert"
   HYPERCUBE_URL: "http://svc-crayfish.shared/hypercube"
-  {{- end -}}
+  {{- end }}
