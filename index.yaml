@@ -12,6 +12,17 @@ entries:
     urls:
     - https://github.com/maxc0d3r/helm-charts/releases/download/aurora-serverless-0.1.0/aurora-serverless-0.1.0.tgz
     version: 0.1.0
+  clamav:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-07-24T11:46:48.166852055Z"
+    description: A Helm chart for setting up clamav
+    digest: f997888a36bc67bce1d8bf5bcd69b0285658f695bd0da67d8b627ad8450904d6
+    name: clamav
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/clamav-0.1.0/clamav-0.1.0.tgz
+    version: 0.1.0
   solr:
   - apiVersion: v2
     appVersion: 1.0.1
@@ -23,4 +34,4 @@ entries:
     urls:
     - https://github.com/maxc0d3r/helm-charts/releases/download/solr-0.1.0/solr-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-20T19:14:41.628846293Z"
+generated: "2023-07-24T11:46:48.166862255Z"
