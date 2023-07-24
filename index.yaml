@@ -108,6 +108,16 @@ entries:
   cantaloupe:
   - apiVersion: v2
     appVersion: 4.1.9-tomcat9.0.69
+    created: "2023-07-24T18:46:47.691824801Z"
+    description: A Helm chart for setting up cantaloupe
+    digest: 6133e5fe00f8246ff44362992498f27d76bdb5d575eb8d7efe341b144ff97813
+    name: cantaloupe
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/cantaloupe-0.1.1/cantaloupe-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 4.1.9-tomcat9.0.69
     created: "2023-07-24T13:11:16.309490655Z"
     description: A Helm chart for setting up cantaloupe
     digest: d67a6a878704e0e693400f86343f4a5925c69b78eef385c019f9926de9b9c577
@@ -149,4 +159,4 @@ entries:
     urls:
     - https://github.com/maxc0d3r/helm-charts/releases/download/solr-0.1.0/solr-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-24T18:17:45.921510199Z"
+generated: "2023-07-24T18:46:47.691850092Z"
