@@ -36,3 +36,6 @@ autoscaling:
 
 pvc:
   size: 20Gi
+
+minMemory: 64M
+maxMemory: 256M
