@@ -40,5 +40,5 @@ ingress:
   enabled: true
   host: islandora.rename.to
   tls:
-    enabled: true
+    enabled: false
     resolver: http

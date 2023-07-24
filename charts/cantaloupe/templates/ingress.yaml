@@ -1,3 +1,4 @@
+---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
@@ -21,7 +22,7 @@ spec:
     certResolver: {{ .Values.ingress.tls.resolver }}
     domains:
     - main: {{ .Values.ingress.host }}
-  {{ end -}}
+  {{- end }}
 
 ---
 apiVersion: traefik.containo.us/v1alpha1
