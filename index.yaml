@@ -3,6 +3,16 @@ entries:
   activemq:
   - apiVersion: v2
     appVersion: 5.16.2-alpine
+    created: "2023-07-25T19:55:47.19727469Z"
+    description: A Helm chart for setting up activemq
+    digest: 136e3a7ea594e47ee8b5b06a68f72e1a0363fdc95356cdd688e2a4dd9874b2f4
+    name: activemq
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/activemq-0.1.6/activemq-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: 5.16.2-alpine
     created: "2023-07-25T17:09:42.50615499Z"
     description: A Helm chart for setting up activemq
     digest: 0ff845491514de01c6a9f4bc59603bceaa303c4edc3510091412c6d8b35fe1f2
@@ -179,4 +189,4 @@ entries:
     urls:
     - https://github.com/maxc0d3r/helm-charts/releases/download/solr-0.1.0/solr-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-25T17:09:42.50618279Z"
+generated: "2023-07-25T19:55:47.197314186Z"
