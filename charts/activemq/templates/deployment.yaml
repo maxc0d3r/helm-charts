@@ -35,7 +35,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: {{ include "activemq.name" . }}
-              containerPort: {{ .Values.service.port }}
+              containerPort: 8161
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
