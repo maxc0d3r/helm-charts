@@ -40,11 +40,11 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
-        - name: kahadb
-          mountPath: /opt/activemq/data/kahadb
-        - name: activemq-env
-          mountPath: /opt/activemq/bin/env
-          subPath: env
+          - name: kahadb
+            mountPath: /opt/activemq/data/kahadb
+          - name: activemq-env
+            mountPath: /opt/activemq/bin/env
+            subPath: env
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
