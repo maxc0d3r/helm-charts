@@ -178,6 +178,17 @@ entries:
     urls:
     - https://github.com/maxc0d3r/helm-charts/releases/download/crayfish-0.1.0/crayfish-0.1.0.tgz
     version: 0.1.0
+  drupal:
+  - apiVersion: v2
+    appVersion: 9.x-manage
+    created: "2023-07-26T14:24:45.729017232Z"
+    description: A Helm chart for setting up drupal
+    digest: 3e66be54b9e47e5cb5294a247b17326cf230d80400be967b54082e194d6b998a
+    name: drupal
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/drupal-0.1.0/drupal-0.1.0.tgz
+    version: 0.1.0
   solr:
   - apiVersion: v2
     appVersion: 1.0.1
@@ -189,4 +200,4 @@ entries:
     urls:
     - https://github.com/maxc0d3r/helm-charts/releases/download/solr-0.1.0/solr-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-25T19:55:47.197314186Z"
+generated: "2023-07-26T14:24:45.729042832Z"
