@@ -132,8 +132,8 @@ spec:
         secret:
           secretName: crayfish-key
           items:
-          - key: private
-            path: default.pub
+          - key: ssh-privatekey
+            path: default.key
       - name: public
         persistentVolumeClaim:
           claimName: drupal-public-claim
