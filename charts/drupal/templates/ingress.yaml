@@ -1,0 +1,42 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ include "drupal.fullname" . }}
+  labels:
+    {{- include "drupal.labels" . | nindent 4 }}
+spec:
+  entryPoints:
+    - {{ template "http.scheme" . }}
+  routes:
+  - kind: Rule
+    match: Host(`{{ .Values.ingress.host }}`) && PathPrefix(`/`)
+    services:
+    - kind: TraefikService
+      name: {{ include "drupal.fullname" . }}
+      port: http
+  {{ if .Values.ingress.tls.enabled -}}
+  tls:
+    certResolver: {{ .Values.ingress.tls.resolver }}
+    domains:
+    - main: {{ .Values.ingress.host }}
+  {{ end -}}
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: TraefikService
+metadata:
+  name: {{ include "drupal.fullname" . }}
+  labels:
+    {{- include "drupal.labels" . | nindent 4 }}
+spec:
+  weighted:
+    sticky:
+      cookie:
+        name: lvl1
+    services:
+      - name: svc-drupal
+        port: http
+        sticky:
+          cookie:
+            httpOnly: false
+            name: lvl2
+            sameSite: strict
