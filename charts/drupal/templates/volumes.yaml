@@ -73,7 +73,6 @@ spec:
   resources:
     requests:
       storage: {{ .Values.pvc.public.size }}
-{{ end }}
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -93,5 +92,4 @@ spec:
   resources:
     requests:
       storage: {{ .Values.pvc.root.size }}
-{{ end }}
 
