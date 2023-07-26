@@ -28,7 +28,7 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       initContainers:
-        - name: "init"-{{ .Chart.Name }}
+        - name: init-{{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: 
@@ -60,7 +60,24 @@ spec:
                 name: postgres
                 key: password              
           volumeMounts:
-          {{ include "drupalVolumeMounts" . | indent 8 }}
+          - name: crayfish-key
+            mountPath: /run/secrets/crayfish
+          - name: public
+            mountPath: /opt/www/drupal/web/sites/default/files
+          - name: private
+            mountPath: /opt/drupal_private_filesystem/d8/default
+          - name: islandora-data
+            mountPath: /opt/islandora_data
+          - name: ingest-data
+            mountPath: /opt/ingest_data
+          - name: drupal-php-ini
+            mountPath: /etc/php/{{ .Values.drupal.phpVersion }}/apache2/conf.d/99-config.ini
+            subPath: 99-config.ini
+          - name: drupal-php-ini
+            mountPath: /etc/php/{{ .Values.drupal.phpVersion }}/cli/conf.d/99-config.ini
+            subPath: 99-config.ini
+          - name: root
+            mountPath: /opt/www/drupal
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -77,7 +94,24 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
-          {{ include "drupalVolumeMounts" . | indent 8 }}
+          - name: crayfish-key
+            mountPath: /run/secrets/crayfish
+          - name: public
+            mountPath: /opt/www/drupal/web/sites/default/files
+          - name: private
+            mountPath: /opt/drupal_private_filesystem/d8/default
+          - name: islandora-data
+            mountPath: /opt/islandora_data
+          - name: ingest-data
+            mountPath: /opt/ingest_data
+          - name: drupal-php-ini
+            mountPath: /etc/php/{{ .Values.drupal.phpVersion }}/apache2/conf.d/99-config.ini
+            subPath: 99-config.ini
+          - name: drupal-php-ini
+            mountPath: /etc/php/{{ .Values.drupal.phpVersion }}/cli/conf.d/99-config.ini
+            subPath: 99-config.ini
+          - name: root
+            mountPath: /opt/www/drupal
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -91,4 +125,24 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       volumes:
-      {{ include "drupalVolumes" . | indent 6 }}
+      - name: crayfish-key
+        secret:
+          secretName: crayfish-key
+          items:
+          - key: private
+            path: default.pub
+      - name: public
+        persistentVolumeClaim:
+          claimName: drupal-public-claim
+      - name: private
+        persistentVolumeClaim:
+          claimName: drupal-private-claim
+      - name: islandora-data
+        persistentVolumeClaim:
+          claimName: drupal-islandora-data-claim
+      - name: ingest-data
+        persistentVolumeClaim:
+          claimName: drupal-ingest-data-claim
+      - name: root
+        persistentVolumeClaim:
+          claimName: drupal-root-claim

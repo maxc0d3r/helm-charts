@@ -1,4 +1,26 @@
 {{/*
+Choose http scheme
+*/}}
+{{- define "http.scheme" -}}
+{{- if .Values.ingress.tls.enabled -}}
+websecure
+{{- else -}}
+web
+{{- end -}}
+{{- end -}}
+
+{{/*
+Choose http scheme
+*/}}
+{{- define "http.protocol" -}}
+{{- if .Values.ingress.tls.enabled -}}
+https
+{{- else -}}
+http
+{{- end -}}
+{{- end -}}
+
+{{/*
 Expand the name of the chart.
 */}}
 {{- define "drupal.name" -}}
@@ -43,15 +65,7 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
 {{/*
-Selector labels
-*/}}
-{{- define "drupal.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "drupal.name" . }}
-app.kubernetes.io/instance: {{ .Release.Name }}
-{{- end }}
-
-{{/*
-Create the name of the service account to use
+Service account
 */}}
 {{- define "drupal.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
@@ -62,68 +76,11 @@ Create the name of the service account to use
 {{- end }}
 
 {{/*
-Choose http scheme
+Selector labels
 */}}
-{{- define "http.scheme" -}}
-{{- if .Values.ingress.tls.enabled -}}
-websecure
-{{- else -}}
-web
-{{- end -}}
-{{- end -}}
+{{- define "drupal.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "drupal.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
 
-{{/*
-Set drupal volumes
-*/}}
-{{- define "drupalVolumes" -}}
-- name: crayfish-key
-  secret:
-    secretName: crayfish-key
-    items:
-    - key: private
-      path: default.pub
-- name: public
-  persistentVolumeClaim:
-    claimName: drupal-public-claim
-- name: private
-  persistentVolumeClaim:
-    claimName: drupal-private-claim
-- name: islandora-data
-  persistentVolumeClaim:
-    claimName: drupal-islandora-data-claim
-- name: ingest-data
-  persistentVolumeClaim:
-    claimName: drupal-ingest-data-claim
-- name: root
-  persistentVolumeClaim:
-    claimName: drupal-root-claim
-{{- if .Values.xdebug.enabled -}}
-- name: xdebug-ini
-  configMap: 
-    name: xdebug-ini
-{{- end -}}
-{{- end -}}
 
-{{/*
-Set drupal volume mounts
-*/ }}
-{{- define "drupalVolumeMounts" -}}
-- name: crayfish-key
-  mountPath: /run/secrets/crayfish
-- name: public
-  mountPath: /opt/www/drupal/web/sites/default/files
-- name: private
-  mountPath: /opt/drupal_private_filesystem/d8/default
-- name: islandora-data
-  mountPath: /opt/islandora_data
-- name: ingest-data
-  mountPath: /opt/ingest_data
-- name: drupal-php-ini
-  mountPath: /etc/php/{{ .Values.drupal.phpVersion }}/apache2/conf.d/99-config.ini
-  subPath: 99-config.ini
-- name: drupal-php-ini
-  mountPath: /etc/php/{{ .Values.drupal.phpVersion }}/cli/conf.d/99-config.ini
-  subPath: 99-config.ini
-- name: root
-  mountPath: /opt/www/drupal
-{{- end -}}

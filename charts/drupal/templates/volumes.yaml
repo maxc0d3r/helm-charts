@@ -5,14 +5,14 @@ metadata:
   labels:
     {{- include "drupal.labels" . | nindent 4 }}
 spec:
-  {{ if .Values.rwxStorageClass }}
+  {{- if .Values.rwxStorageClass }}
   storageClassName: {{ .Values.rwxStorageClass }}
   accessModes:
     - ReadWriteMany
-  {{ else }}
+  {{- else }}
   accessModes:
     - ReadWriteOnce
-  {{ end }}
+  {{- end }}
   resources:
     requests:
       storage: {{ .Values.pvc.ingestData.size }}
@@ -24,14 +24,14 @@ metadata:
   labels:
     {{- include "drupal.labels" . | nindent 4 }}
 spec:
-  {{ if .Values.rwxStorageClass }}
+  {{- if .Values.rwxStorageClass }}
   storageClassName: {{ .Values.rwxStorageClass }}
   accessModes:
     - ReadWriteMany
-  {{ else }}
+  {{- else }}
   accessModes:
     - ReadWriteOnce
-  {{ end }}
+  {{- end }}
   resources:
     requests:
       storage: {{ .Values.pvc.islandoraData.size }}
@@ -43,14 +43,14 @@ metadata:
   labels:
     {{- include "drupal.labels" . | nindent 4 }}
 spec:
-  {{ if .Values.rwxStorageClass }}
+  {{- if .Values.rwxStorageClass }}
   storageClassName: {{ .Values.rwxStorageClass }}
   accessModes:
     - ReadWriteMany
-  {{ else }}
+  {{- else }}
   accessModes:
     - ReadWriteOnce
-  {{ end }}
+  {{- end }}
   resources:
     requests:
       storage: {{ .Values.pvc.private.size }}
@@ -62,14 +62,14 @@ metadata:
   labels:
     {{- include "drupal.labels" . | nindent 4 }}
 spec:
-  {{ if .Values.rwxStorageClass }}
+  {{- if .Values.rwxStorageClass }}
   storageClassName: {{ .Values.rwxStorageClass }}
   accessModes:
     - ReadWriteMany
-  {{ else }}
+  {{- else }}
   accessModes:
     - ReadWriteOnce
-  {{ end }}
+  {{- end }}
   resources:
     requests:
       storage: {{ .Values.pvc.public.size }}
@@ -81,14 +81,14 @@ metadata:
   labels:
     {{- include "drupal.labels" . | nindent 4 }}
 spec:
-  {{ if .Values.rwxStorageClass }}
+  {{- if .Values.rwxStorageClass }}
   storageClassName: {{ .Values.rwxStorageClass }}
   accessModes:
     - ReadWriteMany
-  {{ else }}
+  {{- else }}
   accessModes:
     - ReadWriteOnce
-  {{ end }}
+  {{- end }}
   resources:
     requests:
       storage: {{ .Values.pvc.root.size }}

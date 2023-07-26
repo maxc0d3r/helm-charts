@@ -5,34 +5,32 @@ metadata:
 data:
   ACTIVEMQ_STOMP_PORT: "61613"
   CLAMAV_PORT: "3310"
-  CONFIG_SPLITS: {{ .Values.drupal.config_splits | toJson | quote }}
   DRUPAL_DB_NAME: {{ .Values.drupal.dbName }}
   DRUPAL_SITE_EMAIL: {{ .Values.drupal.siteEmail }}
-  DRUPAL_TRUSTED_HOSTS: {{ template "trustedHosts" . }}
   DRUPAL_USER: {{ .Values.drupal.user }}
   DRUPAL_USER_PASS: {{ .Values.drupal.password }}
-  IIIF_INGRESS_URL: {{ template "ingressUri" . }}/iiif/2
+  IIIF_INGRESS_URL: {{ template "http.protocol" . }}://{{ .Values.ingress.host }}/iiif/2
   JWT_KEY_FILE: /run/secrets/crayfish/default.key
   JWT_KEY_TYPE: RS256
   MEMCACHED_PORT: "11211"
   REVERSE_PROXY: "TRUE"
-  REVERSE_PROXY_ADDRESSES: '{{- include "traefikCidrs" . -}}'
-  {{- if .Values.multiTenant -}}
+  {{- if .Values.multiTenant }}
   CLAMAV_HOST: "svc-clamav.shared"
   IIIF_URL: "http://cantaloup.shared/iiif/2"
   MEMCACHED_HOST: "svc-memcached.shared"
   SOLR_HOST: "svc-solr.shared"
-  {{- if not .Values.useManagedServices -}}
+  {{- if not .Values.useManagedServices }}
   ACTIVEMQ_HOST: "svc-activemq.shared"
   POSTGRES_HOST: "postgres.shared"
-  {{- end -}}
+  {{- end }}
+  {{- else }}
   ACTIVEMQ_HOST: "svc-activemq"
   CLAMAV_HOST: "svc-clamav"
   IIIF_URL: "http://svc-cantaloup/cantaloupe/iiif/2"
   MEMCACHED_HOST: "svc-memcached"
   SOLR_HOST: "svc-solr"
   POSTGRES_HOST: "postgres"
-  {{- end -}}
+  {{- end }}
 
 ---
 apiVersion: v1

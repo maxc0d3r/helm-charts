@@ -45,7 +45,7 @@ ingress:
     resolver: http
 
 pvc:
-  ingest:
+  ingestData:
     size: 20Gi
   islandoraData:
     size: 20Gi
@@ -64,5 +64,23 @@ php:
 drupal:
   dbName: drupal
   dbUser: admin
+  user: drupal
   password: drupal
   siteEmail: foo@bar.com
+  phpVersion: 7.4
+
+init:
+  installSite: true
+  contentPacks:
+    - provisioned_content
+    - i8-specific
+
+podAnnotations: {}
+
+nodeSelector: {}
+
+affinity: {}
+
+tolerations: {}
+
+podSecurityContext: {}
