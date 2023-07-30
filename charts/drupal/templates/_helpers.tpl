@@ -1,7 +1,7 @@
 {{/*
 Get a list of trusted hostnames
 */}}
-{{- define "trustedHosts" -}}
+{{- define "drupal.trustedHosts" -}}
 {{- $serviceName := "svc-drupal" -}}
 {{- $namespaced := print $serviceName "." .Release.Namespace  -}}
 {{- $fullName := print $namespaced ".svc.cluster.local" -}}
