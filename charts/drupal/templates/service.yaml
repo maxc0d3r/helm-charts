@@ -10,6 +10,6 @@ spec:
     - port: {{ .Values.service.port }}
       targetPort: {{ .Values.service.port }}
       protocol: TCP
-      name: {{ include "drupal.name" .}}
+      name: http
   selector:
     {{- include "drupal.selectorLabels" . | nindent 4 }}
