@@ -14,7 +14,7 @@ spec:
         - name: stripforwardedpath
     services:
     - kind: Service
-      name: cantaloupe
+      name: svc-cantaloupe
       passHostHeader: true
       port: {{ .Values.service.port }}
   {{ if .Values.ingress.tls.enabled -}}
