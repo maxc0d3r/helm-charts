@@ -1,4 +1,15 @@
 {{/*
+Get a list of trusted hostnames
+*/}}
+{{- define "trustedHosts" -}}
+{{- $serviceName := "svc-drupal" -}}
+{{- $namespaced := print $serviceName "." .Release.Namespace  -}}
+{{- $fullName := print $namespaced ".svc.cluster.local" -}}
+{{- $baseNames := list "localhost" $serviceName $namespaced $fullName -}}
+{{ .Values.ingress.host | append $baseNames | toJson | quote }}
+{{- end }}
+
+{{/*
 Choose http scheme
 */}}
 {{- define "http.scheme" -}}
