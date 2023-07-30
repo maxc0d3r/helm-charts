@@ -15,8 +15,7 @@ serviceAccount:
   annotations: {}
   name: ""
 
-securityContext:
-  runAsUser: 1000
+securityContext: {}
 
 service:
   type: ClusterIP
