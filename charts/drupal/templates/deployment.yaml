@@ -35,7 +35,7 @@ spec:
             - '/bin/bash'
             - '-c'
             - |
-                sleep 3600 \
+                sleep 3600
                 drush site-install \
                     dgi_standard_profile \
                     --db-url=pgsql://$DRUPAL_DB_USER:$DRUPAL_DB_PASSWORD@$POSTGRES_HOST:5432/$DRUPAL_DB_NAME \
