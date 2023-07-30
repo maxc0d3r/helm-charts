@@ -6,6 +6,7 @@ data:
   ACTIVEMQ_STOMP_PORT: "61613"
   CLAMAV_PORT: "3310"
   DRUPAL_DB_NAME: {{ .Values.drupal.dbName }}
+  DRUPAL_DB_USER: {{ .Values.drupal.dbUser }}
   DRUPAL_SITE_EMAIL: {{ .Values.drupal.siteEmail }}
   DRUPAL_USER: {{ .Values.drupal.user }}
   DRUPAL_USER_PASS: {{ .Values.drupal.password }}
