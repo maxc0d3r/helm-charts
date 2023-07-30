@@ -181,6 +181,16 @@ entries:
   drupal:
   - apiVersion: v2
     appVersion: 9.x-manage
+    created: "2023-07-30T20:17:54.819710634Z"
+    description: A Helm chart for setting up drupal
+    digest: 808e4448a0c202e03f0b52822ec0276233e77e0bf36e3ff0e7d03e13156dc163
+    name: drupal
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/drupal-0.1.13/drupal-0.1.13.tgz
+    version: 0.1.13
+  - apiVersion: v2
+    appVersion: 9.x-manage
     created: "2023-07-30T19:49:26.591759027Z"
     description: A Helm chart for setting up drupal
     digest: 23b9b7ff6c52e79770f97a69f7d45c5b4c527d090a1230c77aef8d9000db7b45
@@ -320,4 +330,4 @@ entries:
     urls:
     - https://github.com/maxc0d3r/helm-charts/releases/download/solr-0.1.0/solr-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-30T19:49:26.591871229Z"
+generated: "2023-07-30T20:17:54.819888936Z"
