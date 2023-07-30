@@ -73,23 +73,3 @@ spec:
   resources:
     requests:
       storage: {{ .Values.pvc.public.size }}
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: drupal-root-claim
-  labels:
-    {{- include "drupal.labels" . | nindent 4 }}
-spec:
-  {{- if .Values.rwxStorageClass }}
-  storageClassName: {{ .Values.rwxStorageClass }}
-  accessModes:
-    - ReadWriteMany
-  {{- else }}
-  accessModes:
-    - ReadWriteOnce
-  {{- end }}
-  resources:
-    requests:
-      storage: {{ .Values.pvc.root.size }}
-
