@@ -85,6 +85,12 @@ spec:
           envFrom:
           - configMapRef:
               name: drupal-env
+          env:
+          - name: DRUPAL_DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: postgres
+                key: password
           ports:
             - name: http
               containerPort: 80
