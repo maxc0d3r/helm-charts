@@ -74,6 +74,16 @@ entries:
   alpaca:
   - apiVersion: v2
     appVersion: 2.2.0
+    created: "2023-07-31T16:44:44.448773651Z"
+    description: A Helm chart for setting up alpaca
+    digest: fd86783c2ee6b8bec784da0a6d77d3f4e4d0f8f878dcb210b4c9b2983de8bf51
+    name: alpaca
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/alpaca-0.1.3/alpaca-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 2.2.0
     created: "2023-07-24T18:17:45.921488398Z"
     description: A Helm chart for setting up alpaca
     digest: f9b48ab75ce2ba6a81ee0767423494521f135cd471b6b82bfd1e4ad89288a947
@@ -430,4 +440,4 @@ entries:
     urls:
     - https://github.com/maxc0d3r/helm-charts/releases/download/solr-0.1.0/solr-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-31T12:00:21.732771918Z"
+generated: "2023-07-31T16:44:44.448847852Z"
