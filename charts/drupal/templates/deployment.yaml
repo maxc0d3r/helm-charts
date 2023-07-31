@@ -35,6 +35,8 @@ spec:
             - '/bin/bash'
             - '-c'
             - |
+                if [[ -z $(drush -y sget site_is_installed) ]]; then
+                echo "Site doesn't exist. Installing it now ..."
                 drush site-install \
                     dgi_standard_profile \
                     --db-url=pgsql://$DRUPAL_DB_USER:$DRUPAL_DB_PASSWORD@$POSTGRES_HOST:5432/$DRUPAL_DB_NAME \
@@ -50,6 +52,10 @@ spec:
                 {{- end }}
                 drush -y migrate:import --userid=1 --group=islandora
                 drush -y state-set dgi_i8_helper_iiif_site_id drupal_d8_default
+                drush -y sset site_is_installed TRUE
+                else
+                echo "Site already exists. Skipping installation..."
+                fi
           envFrom:
           - configMapRef:
               name: drupal-env
