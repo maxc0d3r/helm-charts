@@ -3,8 +3,8 @@ kind: ConfigMap
 metadata:
   name: drupal-env
 data:
-  ACTIVEMQ_STOMP_PORT: 61613
-  CLAMAV_PORT: 3310
+  ACTIVEMQ_STOMP_PORT: "61613"
+  CLAMAV_PORT: "3310"
   DRUPAL_DB_NAME: {{ .Values.drupal.dbName }}
   DRUPAL_DB_USER: {{ .Values.drupal.dbUser }}
   DRUPAL_SITE_EMAIL: {{ .Values.drupal.siteEmail }}
@@ -14,7 +14,7 @@ data:
   IIIF_INGRESS_URL: {{ template "http.protocol" . }}://{{ .Values.ingress.host }}/iiif/2
   JWT_KEY_FILE: /run/secrets/crayfish/default.key
   JWT_KEY_TYPE: RS256
-  MEMCACHED_PORT: 5000
+  MEMCACHED_PORT: "5000"
   REVERSE_PROXY: "TRUE"
   {{- if .Values.multiTenant }}
   CLAMAV_HOST: "svc-clamav.shared"
