@@ -34,8 +34,14 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - name: {{ include "activemq.name" . }}
+            - name: admin
               containerPort: 8161
+              protocol: TCP
+            - name: tcp
+              containerPort: 61616
+              protocol: TCP
+            - name: stomp
+              containerPort: 61613
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

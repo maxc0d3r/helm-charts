@@ -6,18 +6,15 @@ metadata:
     {{- include "activemq.labels" . | nindent 4 }}
 spec:
   ports:
-    - name: http
-      port: 8161
+    - port: 8161
       protocol: TCP
-      targetPort: 8161
-    - name: stomp
-      port: 61613
+      targetPort: admin
+    - port: 61613
       protocol: TCP
-      targetPort: 61613
-    - name: openwire
-      port: 61616
+      targetPort: stomp
+    - port: 61616
       protocol: TCP
-      targetPort: 61616
+      targetPort: tcp
   type: {{ .Values.service.type }}
   selector:
     {{- include "activemq.selectorLabels" . | nindent 4 }}
