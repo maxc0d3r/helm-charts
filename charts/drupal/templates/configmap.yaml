@@ -29,7 +29,7 @@ data:
   ACTIVEMQ_HOST: "svc-activemq"
   CLAMAV_HOST: "svc-clamav"
   IIIF_URL: "http://svc-cantaloup/cantaloupe/iiif/2"
-  MEMCACHED_HOST: "svc-memcached"
+  MEMCACHED_HOST: {{ .Release.Name }}-memcached
   SOLR_HOST: "svc-solr"
   POSTGRES_HOST: "postgres"
   {{- end }}
