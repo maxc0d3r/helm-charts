@@ -82,4 +82,5 @@ affinity: {}
 
 tolerations: {}
 
-podSecurityContext: {}
+podSecurityContext:
+  fsGroup: 1000
