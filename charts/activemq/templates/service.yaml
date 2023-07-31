@@ -6,13 +6,16 @@ metadata:
     {{- include "activemq.labels" . | nindent 4 }}
 spec:
   ports:
-    - port: 8161
+    - name: admin
+      port: 8161
       protocol: TCP
       targetPort: admin
-    - port: 61613
+    - name: stomp
+      port: 61613
       protocol: TCP
       targetPort: stomp
-    - port: 61616
+    - name: tcp
+      port: 61616
       protocol: TCP
       targetPort: tcp
   type: {{ .Values.service.type }}
