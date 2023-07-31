@@ -9,12 +9,12 @@ data:
   HYPERCUBE_URL: "http://svc-crayfish.shared/hypercube"
   {{- if not .Values.useManagedServices }}
   ACTIVEMQ_HOST: "svc-activemq.shared"
-  ACTIVEMQ_JMS_PORT: "61613"
+  ACTIVEMQ_JMS_PORT: "61616"
   POSTGRES_HOST: "svc-postgres.shared"
   {{- end }}
   {{- else }}
   ACTIVEMQ_HOST: "svc-activemq"
-  ACTIVEMQ_JMS_PORT: "61613"
+  ACTIVEMQ_JMS_PORT: "61616"
   POSTGRES_HOST: "svc-postgres"
   HOMARUS_URL: "http://svc-crayfish/homarus/convert"
   HOUDINI_URL: "http://svc-crayfish.shared/houdini/convert"
