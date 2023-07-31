@@ -14,7 +14,9 @@ serviceAccount:
   annotations: {}
   name: ""
 
-podSecurityContext: {}
+podSecurityContext:
+  fsGroup: 1000
+  
 securityContext: {}
 
 service:
