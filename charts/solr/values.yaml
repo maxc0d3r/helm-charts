@@ -24,12 +24,7 @@ service:
 
 resources: {}
 
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 2
-  targetCPUUtilizationPercentage: 90
-  targetMemoryUtilizationPercentage: 90
+autoscaling: {}
 
 rwostorageclass: gp2
 pvc:

@@ -20,17 +20,7 @@ service:
   type: ClusterIP
   port: 3310
 
-resources: 
-  limits:
-    cpu: 1000m
-    memory: 2048Mi
-  requests:
-    cpu: 100m
-    memory: 1024Mi
+resources: {}
 
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 2
-  targetCPUUtilizationPercentage: 90
-  targetMemoryUtilizationPercentage: 90
+autoscaling: {}
+
