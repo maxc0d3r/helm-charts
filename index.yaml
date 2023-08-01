@@ -3,6 +3,16 @@ entries:
   activemq:
   - apiVersion: v2
     appVersion: 5.16.2-alpine
+    created: "2023-08-01T14:44:32.65574354Z"
+    description: A Helm chart for setting up activemq
+    digest: 0835c3d405c870d051a4b761c139bcd9bd69496990f738efd01037bd5341963b
+    name: activemq
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/activemq-0.1.11/activemq-0.1.11.tgz
+    version: 0.1.11
+  - apiVersion: v2
+    appVersion: 5.16.2-alpine
     created: "2023-07-31T19:38:41.113978197Z"
     description: A Helm chart for setting up activemq
     digest: 0f37a823552af8c4edc83346950c304a4262a40c8b845dc004f9bb2bdfd22c85
@@ -104,6 +114,16 @@ entries:
   alpaca:
   - apiVersion: v2
     appVersion: 2.2.0
+    created: "2023-08-01T14:44:32.824998802Z"
+    description: A Helm chart for setting up alpaca
+    digest: bbd5934196e2cf6546fb1a7247c35a33e498caa3cfc27c8c65bed35b8952b0f5
+    name: alpaca
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/alpaca-0.1.5/alpaca-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 2.2.0
     created: "2023-07-31T16:44:44.448773651Z"
     description: A Helm chart for setting up alpaca
     digest: fd86783c2ee6b8bec784da0a6d77d3f4e4d0f8f878dcb210b4c9b2983de8bf51
@@ -168,6 +188,16 @@ entries:
   cantaloupe:
   - apiVersion: v2
     appVersion: 4.1.9-tomcat9.0.69
+    created: "2023-08-01T14:44:32.970849712Z"
+    description: A Helm chart for setting up cantaloupe
+    digest: b3d6922d1b5bf0b810ce6f7d6d9b1a19c631585b61a304a080323e641cba19e1
+    name: cantaloupe
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/cantaloupe-0.1.6/cantaloupe-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: 4.1.9-tomcat9.0.69
     created: "2023-08-01T08:57:47.148457488Z"
     description: A Helm chart for setting up cantaloupe
     digest: d723ab1aff31cd03df944480b5fdd0660c2b69a1e6c6d93329f670f482f597df
@@ -219,6 +249,16 @@ entries:
   clamav:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-08-01T14:44:33.114233776Z"
+    description: A Helm chart for setting up clamav
+    digest: bffaacc7045f6ac95058b06ebd1fe1edaf317ad3554169abb25d36b347a5ed4f
+    name: clamav
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/clamav-0.1.2/clamav-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-07-24T11:46:48.166852055Z"
     description: A Helm chart for setting up clamav
     digest: f997888a36bc67bce1d8bf5bcd69b0285658f695bd0da67d8b627ad8450904d6
@@ -230,6 +270,16 @@ entries:
   crayfish:
   - apiVersion: v2
     appVersion: 1.0.0-3.x
+    created: "2023-08-01T14:44:33.259644778Z"
+    description: A Helm chart for setting up crayfish
+    digest: cca6e72b3c9f46d49dc6b5f4d2bfc531b7a30e01d4b4b00fdaf103994379e75d
+    name: crayfish
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/crayfish-0.1.2/crayfish-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.0.0-3.x
     created: "2023-07-24T13:11:16.532244489Z"
     description: A Helm chart for setting up crayfish
     digest: 35cde75dfa18ca109350f89e692013517c6bc7247319904078c3a7cd90df7e97
@@ -239,6 +289,16 @@ entries:
     - https://github.com/maxc0d3r/helm-charts/releases/download/crayfish-0.1.0/crayfish-0.1.0.tgz
     version: 0.1.0
   drupal:
+  - apiVersion: v2
+    appVersion: 9.x-manage
+    created: "2023-08-01T14:44:33.412905231Z"
+    description: A Helm chart for setting up drupal
+    digest: cd0d0864d960c51cce2ea7d3938c69c48192359e0a0a24e63b2f6b02b8561262
+    name: drupal
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/drupal-0.1.24/drupal-0.1.24.tgz
+    version: 0.1.24
   - apiVersion: v2
     appVersion: 9.x-manage
     created: "2023-07-31T12:00:21.731839179Z"
@@ -472,6 +532,16 @@ entries:
   solr:
   - apiVersion: v2
     appVersion: 1.0.1
+    created: "2023-08-01T14:44:33.738847312Z"
+    description: A Helm chart for setting up solr
+    digest: 97d842e3fcf61b447b991e0c992cd01f6913248c44560e473e57610b91c8a0c6
+    name: solr
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/solr-0.1.2/solr-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.0.1
     created: "2023-07-20T19:14:41.628798793Z"
     description: A Helm chart for setting up solr
     digest: 13002de60650d10f54f1992c6353afc99384f40a80ba49de8ea5fdb0a1ef6c7a
@@ -480,4 +550,4 @@ entries:
     urls:
     - https://github.com/maxc0d3r/helm-charts/releases/download/solr-0.1.0/solr-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-01T08:57:47.148711105Z"
+generated: "2023-08-01T14:44:33.739105417Z"
