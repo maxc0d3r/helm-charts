@@ -1,0 +1,30 @@
+apiVersion: mq.services.k8s.aws/v1alpha1
+kind: Broker
+metadata:
+  name: {{ .Values.name }}
+  namespace: ack-resources
+spec:
+  name: {{ .Values.name }}
+  autoMinorVersionUpgrade: False
+  deploymentMode: {{ .Values.mq.deploymentMode }}
+  logs: 
+    audit: True
+    general: True
+  hostInstanceType: {{ .Values.mq.hostInstanceType }}
+  engineType: {{ .Values.mq.engineType | quote }}
+  engineVersion: {{ .Values.mq.engineVersion | quote }}
+  publiclyAccessible: False
+  securityGroupRefs: 
+    - from:
+        name: "mq-sec-group"
+  subnetRefs:
+    - from:
+        name: "mq-subnet-1"
+  users:
+  - consoleAccess: True
+    password:
+      key: adminUserPassword
+      name: {{ .Values.name }}-mq-secret
+      namespace: ack-resources
+    username: {{ .Values.mq.adminUsername }}
+

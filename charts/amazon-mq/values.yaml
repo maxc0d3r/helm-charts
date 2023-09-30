@@ -1,0 +1,9 @@
+#Name of mq broker"
+name: ""
+mq:
+  engineType: "" #Database engine
+  engineVersion: "" #Database engine version
+  adminUsername: "" #Admin username
+# adminUserPassword: "" Use this only if you don't want password to be randomly generated
+  hostInstanceType: "mq.t3.micro" 
+  deploymentMode: "SINGLE_INSTANCE"

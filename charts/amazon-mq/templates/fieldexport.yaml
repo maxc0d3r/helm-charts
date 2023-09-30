@@ -1,0 +1,101 @@
+apiVersion: services.k8s.aws/v1alpha1
+kind: FieldExport
+metadata:
+  name: {{ .Values.name }}-mq-consoleurl
+  namespace: ack-resources
+spec:
+  to:
+    name: {{ .Values.name }}-mq-secret
+    kind: secret
+    key: consoleURL
+  from:
+    path: ".status.brokerInstances[0].consoleURL"
+    resource:
+      group: mq.services.k8s.aws
+      kind: Broker
+      name: {{ .Values.name }}
+---
+apiVersion: services.k8s.aws/v1alpha1
+kind: FieldExport
+metadata:
+  name: {{ .Values.name }}-mq-endpoint-ssl
+  namespace: ack-resources
+spec:
+  to:
+    name: {{ .Values.name }}-mq-secret
+    kind: secret
+    key: endpoint-ssl
+  from:
+    path: ".status.brokerInstances[0].endpoints[0]"
+    resource:
+      group: mq.services.k8s.aws
+      kind: Broker
+      name: {{ .Values.name }}
+---
+apiVersion: services.k8s.aws/v1alpha1
+kind: FieldExport
+metadata:
+  name: {{ .Values.name }}-mq-endpoint-amqp
+  namespace: ack-resources
+spec:
+  to:
+    name: {{ .Values.name }}-mq-secret
+    kind: secret
+    key: endpoint-amqp
+  from:
+    path: ".status.brokerInstances[0].endpoints[1]"
+    resource:
+      group: mq.services.k8s.aws
+      kind: Broker
+      name: {{ .Values.name }}
+---
+apiVersion: services.k8s.aws/v1alpha1
+kind: FieldExport
+metadata:
+  name: {{ .Values.name }}-mq-endpoint-stomp
+  namespace: ack-resources
+spec:
+  to:
+    name: {{ .Values.name }}-mq-secret
+    kind: secret
+    key: endpoint-stomp
+  from:
+    path: ".status.brokerInstances[0].endpoints[2]"
+    resource:
+      group: mq.services.k8s.aws
+      kind: Broker
+      name: {{ .Values.name }}
+---
+apiVersion: services.k8s.aws/v1alpha1
+kind: FieldExport
+metadata:
+  name: {{ .Values.name }}-mq-endpoint-mqtt
+  namespace: ack-resources
+spec:
+  to:
+    name: {{ .Values.name }}-mq-secret
+    kind: secret
+    key: endpoint-mqtt
+  from:
+    path: ".status.brokerInstances[0].endpoints[3]"
+    resource:
+      group: mq.services.k8s.aws
+      kind: Broker
+      name: {{ .Values.name }}
+---
+apiVersion: services.k8s.aws/v1alpha1
+kind: FieldExport
+metadata:
+  name: {{ .Values.name }}-mq-endpoint-wss
+  namespace: ack-resources
+spec:
+  to:
+    name: {{ .Values.name }}-mq-secret
+    kind: secret
+    key: endpoint-wss
+  from:
+    path: ".status.brokerInstances[0].endpoints[4]"
+    resource:
+      group: mq.services.k8s.aws
+      kind: Broker
+      name: {{ .Values.name }}

@@ -2,10 +2,7 @@ apiVersion: services.k8s.aws/v1alpha1
 kind: FieldExport
 metadata:
   name: {{ .Values.clusterName }}-host
-  namespace: {{ .Release.Namespace }}
-  annotations:
-    "helm.sh/hook": "post-install"
-    "helm.sh/hook-delete-policy": hook-succeeded
+  namespace: ack-resources
 spec:
   to:
     name: {{ .Values.clusterName }}-db-secret
