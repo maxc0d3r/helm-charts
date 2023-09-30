@@ -162,7 +162,30 @@ entries:
     urls:
     - https://github.com/maxc0d3r/helm-charts/releases/download/alpaca-0.1.0/alpaca-0.1.0.tgz
     version: 0.1.0
+  amazon-mq:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-09-30T18:20:03.14902704Z"
+    description: A Helm chart for to setup amazon mq and export the details into a
+      secret to be used by other apps
+    digest: 269ab82421df825da65ec5d0d2e8f0cc1bf9d496913c9cfdee7e67707d373d5e
+    name: amazon-mq
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/amazon-mq-0.1.0/amazon-mq-0.1.0.tgz
+    version: 0.1.0
   aurora-serverless:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-09-30T18:20:03.36963281Z"
+    description: A Helm chart for to setup aurora serverless database and export the
+      details into a secret to be used by other apps
+    digest: 0ac5350a4db3538890dca8fb9059cebe307d857a1cce9bc908c53c91a7ba2e2b
+    name: aurora-serverless
+    type: application
+    urls:
+    - https://github.com/maxc0d3r/helm-charts/releases/download/aurora-serverless-0.1.2/aurora-serverless-0.1.2.tgz
+    version: 0.1.2
   - apiVersion: v2
     appVersion: 0.1.0
     created: "2023-07-24T13:09:35.396858993Z"
@@ -550,4 +573,4 @@ entries:
     urls:
     - https://github.com/maxc0d3r/helm-charts/releases/download/solr-0.1.0/solr-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-01T14:44:33.739105417Z"
+generated: "2023-09-30T18:20:03.369801412Z"
